@@ -22,7 +22,9 @@ public class Undo {
     }
 
     public String undoCommand(){
-        return "returnsAndEliminateTheLastCommand";
+        String topCommand = this.commands.peek();
+        this.commands.pop();
+        return topCommand;
     }
 
     public void showHistory(){
