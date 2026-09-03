@@ -7,6 +7,7 @@ public class Undo {
     private Stack<String> commands;
 
     private Undo(){
+        commands = new Stack<>();
     }
 
     public static Undo getInstance(){
@@ -17,7 +18,7 @@ public class Undo {
     }
 
     public void addCommand(String command){
-
+        this.commands.push(command);
     }
 
     public String undoCommand(){
