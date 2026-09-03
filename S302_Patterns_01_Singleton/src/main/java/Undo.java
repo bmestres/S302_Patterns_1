@@ -28,7 +28,6 @@ public class Undo {
     }
 
     public void showHistory(){
-        // prints all commands stored
+        this.commands.forEach(command -> System.out.println(command));
     }
-
 }
