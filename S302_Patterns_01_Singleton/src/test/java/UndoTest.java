@@ -30,11 +30,11 @@ class UndoTest {
 
     @org.junit.jupiter.api.Test
     void undoCommandWithEmptyStackShouldThrowException() {
-        assertThrows(IllegalStateException.class, ()-> testInstance.undoCommand());
+        assertThrows(IllegalStateException.class, () -> testInstance.undoCommand());
     }
 
     @Test
-    void undoCommandWhthNonEmptyStackShouldReturnTopCommand(){
+    void undoCommandWhthNonEmptyStackShouldReturnTopCommand() {
         testInstance.addCommand("mkdir folder");
         testInstance.addCommand("cd folder");
 
