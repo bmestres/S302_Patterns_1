@@ -7,19 +7,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UndoTest {
 
+    Undo testInstance = Undo.getInstance();
+
     @org.junit.jupiter.api.Test
     void sameUndoInstanceShouldBeReturnedAtEachCreation() {
-        Undo firstInstance = Undo.getInstance();
-        Undo shouldReferenceTheFirstInstance = Undo.getInstance();
 
-        assertEquals(firstInstance, shouldReferenceTheFirstInstance);
-
+        Undo shouldReferenceTheTestInstance = Undo.getInstance();
+        assertEquals(testInstance, shouldReferenceTheTestInstance);
     }
 
     @org.junit.jupiter.api.Test
     void addCommandShouldResultInExpectedStack() {
-
-        Undo testInstance = Undo.getInstance();
 
         Stack<String> expectedStack = new Stack<>();
         expectedStack.addAll(List.of("mkdir folder", "cd folder"));
@@ -27,15 +25,20 @@ class UndoTest {
         testInstance.addCommand("mkdir folder");
         testInstance.addCommand("cd folder");
 
-        assertEquals(expectedStack, testInstance);
+        assertEquals(expectedStack, testInstance.getAll());
     }
 
     @org.junit.jupiter.api.Test
     void undoCommandWithEmptyStackShouldThrowException() {
+        assertThrows(IllegalStateException.class, ()-> testInstance.undoCommand());
     }
 
     @Test
     void undoCommandWhthNonEmptyStackShouldReturnTopCommand(){
+        testInstance.addCommand("mkdir folder");
+        testInstance.addCommand("cd folder");
 
+        String topCommand = testInstance.undoCommand();
+        assertEquals("cd folder", topCommand);
     }
 }

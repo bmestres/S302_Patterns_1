@@ -35,9 +35,4 @@ public class Undo {
     public void showHistory(){
         this.commands.forEach(command -> System.out.println(command));
     }
-
-    @Override
-    public String toString() {
-        return
-    }
 }
