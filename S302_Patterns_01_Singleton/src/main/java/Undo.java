@@ -21,13 +21,23 @@ public class Undo {
         this.commands.push(command);
     }
 
+    public Stack<String> getAll(){
+        return this.commands;
+    }
+
     public String undoCommand(){
-        String topCommand = this.commands.peek();
-        this.commands.pop();
-        return topCommand;
+        if(this.commands.isEmpty()){
+            throw new IllegalStateException("Stack is empty");
+        }
+        return this.commands.pop();
     }
 
     public void showHistory(){
         this.commands.forEach(command -> System.out.println(command));
+    }
+
+    @Override
+    public String toString() {
+        return
     }
 }
