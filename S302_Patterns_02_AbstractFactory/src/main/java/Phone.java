@@ -1,2 +1,3 @@
-public class Phone {
+public interface Phone {
+    String format();
 }
