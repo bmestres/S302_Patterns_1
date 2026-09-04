@@ -22,8 +22,7 @@ public class SpainPhone implements Phone{
 
     @Override
     public String format() {
-        return String.format("%s %s", PHONE_PREFIX, this.phone.
-                replaceAll("(.{2})", "$1").
-                replaceAll(" $", ""));
+        String formatedPhone = String.format("%s %s %s %s", phone.substring(0, 3), phone.substring(3, 5), phone.substring(5, 7), phone.substring(7, 9));
+        return String.format("%s %s", PHONE_PREFIX, formatedPhone);
     }
 }

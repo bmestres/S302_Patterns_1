@@ -8,11 +8,11 @@ public class SpainAddress implements Address {
     public SpainAddress(String street, String city, String postCode) {
 
         if(street == null){
-            throw new IllegalStateException("Address must not be NULL");
+            throw new IllegalArgumentException("Address must not be NULL");
         }
 
         if(street.isBlank()){
-            throw new IllegalStateException("Address must not be empty");
+            throw new IllegalArgumentException("Address must not be empty");
         }
 
         if(city == null){

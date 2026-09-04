@@ -20,6 +20,6 @@ public class USAPhone implements Phone {
     @Override
     public String format() {
         String addedZero = "0" + this.phone;
-        return String.format("+1 (%s) %s-%s", addedZero.substring(0, 2), addedZero.substring(3, 5), addedZero.substring(6, 9));
+        return String.format("+1 (%s) %s-%s", addedZero.substring(0, 3), addedZero.substring(3, 6), addedZero.substring(6, 10));
     }
 }
