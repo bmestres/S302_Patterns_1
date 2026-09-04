@@ -1,2 +1,6 @@
-public class USAPhone {
+public class USAPhone implements Phone {
+    @Override
+    public String format() {
+        return "";
+    }
 }

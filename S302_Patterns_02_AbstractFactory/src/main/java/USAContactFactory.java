@@ -6,7 +6,7 @@ public class USAContactFactory implements ContactFactory {
     }
 
     @Override
-    public Contact createContact() {
-        return new USAContact();
+    public Phone createPhone() {
+        return new USAPhone();
     }
 }

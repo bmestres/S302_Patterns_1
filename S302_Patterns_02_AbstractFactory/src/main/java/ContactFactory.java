@@ -1,5 +1,4 @@
 public interface ContactFactory {
-
     Address createAddress();
-    Contact createContact();
+    Phone createPhone();
 }

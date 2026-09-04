@@ -61,7 +61,7 @@ public class SpainContactFactory implements ContactFactory {
     }
 
     @Override
-    public Contact createContact() {
-        return new SpainContact();
+    public Phone createPhone() {
+        return new SpainPhone();
     }
 }
