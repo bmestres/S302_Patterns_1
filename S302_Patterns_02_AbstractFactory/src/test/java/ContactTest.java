@@ -62,9 +62,14 @@ class ContactTest {
     void constructUSAContactWithIncorrectInputsShouldReturnException(String street, String city, String postCode, String phone){
 
         assertThrows(IllegalArgumentException.class, ()-> {
-            USAContactFactory usaContactFactory = new USAContactFactory(street, city, postCode, phone);
-            new Contact(usaContactFactory);
+            USAContactFactory usaContactFactory01 = new USAContactFactory(street, city, postCode, phone);
+            new Contact(usaContactFactory01);
         });
+
+        assertDoesNotThrow(()-> {
+            USAContactFactory usaContactFactory02 = new USAContactFactory("154 5th Avenue", "New York", "NY 10001", "987654321");
+            new Contact(usaContactFactory02);
+        } );
 
     }
 }
