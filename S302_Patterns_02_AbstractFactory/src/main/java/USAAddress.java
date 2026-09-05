@@ -8,7 +8,7 @@ public class USAAddress implements Address{
     public USAAddress(String street, String city, String postCode) {
 
         if(street == null){
-            throw new IllegalStateException("Address must not be NULL");
+            throw new IllegalArgumentException("Address must not be NULL");
         }
 
         if(street.isBlank()){
