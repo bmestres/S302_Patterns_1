@@ -6,7 +6,6 @@ public class JSONReportStrategy implements ReportStrategy {
     @Override
     public String generateReport(Customer customer) {
         ObjectMapper mapper = new ObjectMapper();
-
         return String.format("%s\n%s",
                 DISPLAY_NAME, mapper.writeValueAsString(customer));
     }
