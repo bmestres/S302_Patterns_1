@@ -1,7 +1,7 @@
 import java.io.Serializable;
 
 public record Customer (
-        String id,
+        int id,
         String name,
         String surname,
         String email,
