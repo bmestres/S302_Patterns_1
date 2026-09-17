@@ -10,22 +10,7 @@ public class XMLReportStrategy implements ReportStrategy {
         if(customer == null) {
             throw new NullPointerException();
         }
-        return xml;
-    }
-
-
-    static void main(String[] args) {
-
-        Customer customer = new Customer(
-                1,
-                "Customer name",
-                "Customer surname",
-                "email@domain.com",
-                Gender.MALE);
-
-        ReportStrategy xmlReport = new XMLReportStrategy();
         
-        System.out.println(xmlReport.generateReport(customer));
-
+        return String.format("%s\n%s", DISPLAY_NAME, xml);
     }
 }
