@@ -5,6 +5,10 @@ public class JSONReportStrategy implements ReportStrategy {
 
     @Override
     public String generateReport(Customer customer) {
+        if(customer == null) {
+            throw new IllegalArgumentException("Customer must not be NULL");
+        }
+
         ObjectMapper mapper = new ObjectMapper();
         return String.format("%s\n%s",
                 DISPLAY_NAME, mapper.writeValueAsString(customer));

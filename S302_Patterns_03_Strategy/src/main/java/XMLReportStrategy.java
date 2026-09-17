@@ -5,12 +5,15 @@ public class XMLReportStrategy implements ReportStrategy {
 
     @Override
     public String generateReport(Customer customer) {
+        if(customer == null) {
+            throw new IllegalArgumentException("Customer must not be NULL");
+        }
         XmlMapper xmlMapper = new XmlMapper();
         String xml = xmlMapper.writeValueAsString(customer);
         if(customer == null) {
             throw new NullPointerException();
         }
-        
+
         return String.format("%s\n%s", DISPLAY_NAME, xml);
     }
 }
